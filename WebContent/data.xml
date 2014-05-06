@@ -1,0 +1,527 @@
+<collection>
+  <weapon>
+    <name>Trebuchet</name>
+    <att1>
+      <value>Dead Zombies</value>
+      <value>Rocks</value>
+      <value>Flaming Water Balloons</value>
+      <value>Acid Water Balloons</value>
+    </att1>
+    <att2>
+      <value>Swinging Counterweight</value>
+      <value>Fixed Counterweight</value>
+      <value>Floating Frame</value>
+      <value>Floating Arm</value>
+    </att2>
+  </weapon>
+  <weapon>
+    <name>Chopsticks</name>
+    <att1>
+      <value>Bamboo Chopsticks</value>
+      <value>Bone Chopsticks</value>
+      <value>Wood Chopsticks</value>
+      <value>Carbon Fiber Chopsticks</value>
+    </att1>
+    <att2>
+      <value>3''</value>
+      <value>6''</value>
+      <value>9''</value>
+      <value>12''</value>
+    </att2>
+  </weapon>
+  <weapon>
+    <name>Potato Gun</name>
+    <att1>
+      <value>Russet Potatoes</value>
+      <value>White Potatoes</value>
+      <value>Red Potatoes</value>
+      <value>Yellow Potatoes</value>
+    </att1>
+    <att2>
+      <value>Red Dot Sight</value>
+      <value>ACOG Scope</value>
+      <value>Infrared Sight</value>
+      <value>Holographic Sight</value>
+    </att2>
+  </weapon>
+  <weapon>
+    <name>Lightsaber</name>
+    <att1>
+      <value>Standard</value>
+      <value>Curve-Hilted</value>
+      <value>Tonfa-Style</value>
+      <value>Wrist Hilt</value>
+    </att1>
+    <att2>
+      <value>Zinc</value>
+      <value>Lithium</value>
+      <value>Alkaline</value>
+      <value>Mercury</value>
+    </att2>
+  </weapon>
+  <weapon>
+    <name>Laser</name>
+    <att1>
+      <value>Gas Laser</value>
+      <value>Chemical Laser</value>
+      <value>Metal-Vapor Laser</value>
+      <value>Solid-State Laser</value>
+    </att1>
+    <att2>
+      <value>Electrical Discharge</value>
+      <value>Transverse</value>
+      <value>Chemical Reaction</value>
+      <value>Flashlamp</value>
+    </att2>
+  </weapon>
+  <armor>
+    <name>Kevlar</name>
+    <att1>
+      <value>Type 29</value>
+      <value>Type KM2</value>
+      <value>Type 129</value>
+      <value>Type XP</value>
+    </att1>
+    <att2>
+      <value>Desert Camouflage</value>
+      <value>Woodland Camouflage</value>
+      <value>Digital Camouflage</value>
+      <value>Golden Camouflage</value>
+    </att2>
+  </armor>
+  <armor>
+    <name>Deet Repellent</name>
+    <att1>
+      <value>25%</value>
+      <value>50%</value>
+      <value>75%</value>
+      <value>100%</value>
+    </att1>
+    <att2>
+      <value>Desert Camouflage</value>
+      <value>Woodland Camouflage</value>
+      <value>Digital Camouflage</value>
+      <value>Golden Camouflage</value>
+    </att2>
+  </armor>
+  <armor>
+    <name>Axe Body Spray</name>
+    <att1>
+      <value>Touch</value>
+      <value>Clix</value>
+      <value>Vice</value>
+      <value>Dark Temptation</value>
+    </att1>
+    <att2>
+      <value>Desert Camouflage</value>
+      <value>Woodland Camouflage</value>
+      <value>Digital Camouflage</value>
+      <value>Golden Camouflage</value>
+    </att2>
+  </armor>
+  <armor>
+    <name>Overalls</name>
+    <att1>
+      <value>Shirtless</value>
+      <value>One Strap</value>
+      <value>Wife beater</value>
+      <value>T-shirt</value>
+    </att1>
+    <att2>
+      <value>Desert Camouflage</value>
+      <value>Woodland Camouflage</value>
+      <value>Digital Camouflage</value>
+      <value>Golden Camouflage</value>
+    </att2>
+  </armor>
+  <armor>
+    <name>Hula Skirt</name>
+    <att1>
+      <value>Bluegrass</value>
+      <value>Fescue</value>
+      <value>Ryegrass</value>
+      <value>Bentgrass</value>
+    </att1>
+    <att2>
+      <value>Desert Camouflage</value>
+      <value>Woodland Camouflage</value>
+      <value>Digital Camouflage</value>
+      <value>Golden Camouflage</value>
+    </att2>
+  </armor>
+  <equipment>
+    <name>Rope</name>
+    <att1>
+      <value>Hemp</value>
+      <value>Cotton</value>
+      <value>Nylon</value>
+      <value>Polyethylene</value>
+    </att1>
+    <att2>
+      <value>Twisted</value>
+      <value>Single Braid</value>
+      <value>Double Braid</value>
+      <value>Kernamantle</value>
+    </att2>
+  </equipment>
+  <equipment>
+    <name>Messaging System</name>
+    <att1>
+      <value>Carrier Pigeon</value>
+      <value>Message in a Bottle</value>
+      <value>Frisbee</value>
+      <value>Model Plane</value>
+    </att1>
+    <att2>
+      <value>Substitution Cipher</value>
+      <value>Transposition Cipher</value>
+      <value>Private Key Cipher</value>
+      <value>Public Key Cipher</value>
+    </att2>
+  </equipment>
+  <equipment>
+    <name>Light Source</name>
+    <att1>
+      <value>Spotlight</value>
+      <value>Lantern</value>
+      <value>Flashlight</value>
+      <value>Infrared</value>
+    </att1>
+    <att2>
+      <value>Pulsing</value>
+      <value>Steady Beam</value>
+      <value>Pinpoint</value>
+      <value>Strobe</value>
+    </att2>
+  </equipment>
+  <equipment>
+    <name>Tools</name>
+    <att1>
+      <value>Axe</value>
+      <value>Hammer</value>
+      <value>Wrench</value>
+      <value>Plunger</value>
+    </att1>
+    <att2>
+      <value>Carbon Fiber</value>
+      <value>Titanium</value>
+      <value>Aluminum</value>
+      <value>Wood</value>
+    </att2>
+  </equipment>
+  <equipment>
+    <name>Welding</name>
+    <att1>
+      <value>Arc</value>
+      <value>Gas</value>
+      <value>Resistance</value>
+      <value>Energy Beam</value>
+    </att1>
+    <att2>
+      <value>Spot Welding</value>
+      <value>Shot Welding</value>
+      <value>Flash Welding</value>
+      <value>Projection Welding</value>
+    </att2>
+  </equipment>
+  <skill>
+    <name>John Wayne</name>
+    <att1>
+      <value>Western</value>
+      <value>Sailing</value>
+      <value>romance</value>
+      <value>War</value>
+    </att1>
+    <att2>
+      <value>Shooting</value>
+      <value>Talking</value>
+      <value>Leadership</value>
+      <value>Kissing</value>
+    </att2>
+  </skill>
+  <skill>
+    <name>Chuck Norris</name>
+    <att1>
+      <value>Texas Ranger</value>
+      <value>Way of the Dragon</value>
+      <value>Missing in Action</value>
+      <value>Top Dog</value>
+    </att1>
+    <att2>
+      <value>Punch</value>
+      <value>Kick</value>
+      <value>Head butt</value>
+      <value>Stare</value>
+    </att2>
+  </skill>
+  <skill>
+    <name>John "Hannibal" Smith</name>
+    <att1>
+      <value>Vietnam</value>
+      <value>Army Base</value>
+      <value>Airplane</value>
+      <value>China</value>
+    </att1>
+    <att2>
+      <value>Planning</value>
+      <value>Leadership</value>
+      <value>Disguise</value>
+      <value>Fighting</value>
+    </att2>
+  </skill>
+  <skill>
+    <name>The Situation</name>
+    <att1>
+      <value>Staten Island</value>
+      <value>Italy</value>
+      <value>Jersey Shore</value>
+      <value>Las Vegas</value>
+    </att1>
+    <att2>
+      <value>GTL</value>
+      <value>Drinking</value>
+      <value>Rapping</value>
+      <value>Creeping</value>
+    </att2>
+  </skill>
+  <skill>
+    <name>MacGruber</name>
+    <att1>
+      <value>Missile Silo</value>
+      <value>Rebel Training Camp</value>
+      <value>Lab</value>
+      <value>Ship</value>
+    </att1>
+    <att2>
+      <value>Dumb Luck</value>
+      <value>Camouflage</value>
+      <value>Bomb Defusal</value>
+      <value>Random Object Use</value>
+    </att2>
+  </skill>
+  <firstaid>
+    <name>Fast Food</name>
+    <att1>
+      <value>Hot dog</value>
+      <value>Hamburger</value>
+      <value>Cold cut sandwich</value>
+      <value>Egg and cheese bagel</value>
+    </att1>
+    <att2>
+      <value>Salt</value>
+      <value>Pepper</value>
+      <value>Ketchup</value>
+      <value>Mustard</value>
+    </att2>
+  </firstaid>
+  <firstaid>
+    <name>Medical Supplies</name>
+    <att1>
+      <value>Ace Bandage</value>
+      <value>Band-aids</value>
+      <value>Gauze</value>
+      <value>Sports tape</value>
+    </att1>
+    <att2>
+      <value>Skin-toned Plastic</value>
+      <value>Clear Plastic</value>
+      <value>White Fabric</value>
+      <value>Skin-toned Fabric</value>
+    </att2>
+  </firstaid>
+  <firstaid>
+    <name>Drinks</name>
+    <att1>
+      <value>Juice</value>
+      <value>Soda</value>
+      <value>Milkshake</value>
+      <value>Water</value>
+    </att1>
+    <att2>
+      <value>Small</value>
+      <value>Medium</value>
+      <value>Large</value>
+      <value>Super sized</value>
+    </att2>
+  </firstaid>
+  <firstaid>
+    <name>Candy</name>
+    <att1>
+      <value>Gumballs</value>
+      <value>Jellybeans</value>
+      <value>Swedish fish</value>
+      <value>Peach rings</value>
+    </att1>
+    <att2>
+      <value>1/4 lbs</value>
+      <value>1/2 lbs</value>
+      <value>1 lb</value>
+      <value>5 lbs</value>
+    </att2>
+  </firstaid>
+  <firstaid>
+    <name>Vegetable</name>
+    <att1>
+      <value>Tomato</value>
+      <value>Spinach</value>
+      <value>Corn</value>
+      <value>Broccoli</value>
+    </att1>
+    <att2>
+      <value>Raw</value>
+      <value>Steamed</value>
+      <value>Grilled</value>
+      <value>Boiled</value>
+    </att2>
+  </firstaid>
+  <repellent>
+    <name>Stuffed Animals</name>
+    <att1>
+      <value>Mouse</value>
+      <value>Snake</value>
+      <value>Elephant</value>
+      <value>Giraffe</value>
+    </att1>
+    <att2>
+      <value>Small</value>
+      <value>Medium</value>
+      <value>Large</value>
+      <value>Super sized</value>
+    </att2>
+  </repellent>
+  <repellent>
+    <name>Face paint</name>
+    <att1>
+      <value>Lion</value>
+      <value>Zebra</value>
+      <value>Butterfly</value>
+      <value>Design</value>
+    </att1>
+    <att2>
+      <value>Full-face</value>
+      <value>Right cheek</value>
+      <value>Left cheek</value>
+      <value>Eyes</value>
+    </att2>
+  </repellent>
+  <repellent>
+    <name>Merchandise</name>
+    <att1>
+      <value>Hat</value>
+      <value>Beach Towel</value>
+      <value>T-shirt</value>
+      <value>Backpack</value>
+    </att1>
+    <att2>
+      <value>Single color</value>
+      <value>Tie-dyed</value>
+      <value>Small logo</value>
+      <value>Large logo</value>
+    </att2>
+  </repellent>
+  <repellent>
+    <name>Park Photos</name>
+    <att1>
+      <value>Rollercoaster</value>
+      <value>Merry-Go-Round</value>
+      <value>Teacups</value>
+      <value>Go-karts</value>
+    </att1>
+    <att2>
+      <value>Framed</value>
+      <value>Keychain</value>
+      <value>Poster-sized</value>
+      <value>Magnet</value>
+    </att2>
+  </repellent>
+  <repellent>
+    <name>Odor Based</name>
+    <att1>
+      <value>Rotten Eggs</value>
+      <value>Garlic</value>
+      <value>Mint</value>
+      <value>Paprika</value>
+    </att1>
+    <att2>
+      <value>Skin</value>
+      <value>Clothes</value>
+      <value>Aerosol</value>
+      <value>Ground</value>
+    </att2>
+  </repellent>
+  <vehicle>
+    <name>Hovercraft</name>
+    <att1>
+      <value>Rough Terrain Skirt</value>
+      <value>High Output Fan</value>
+      <value>Extra Fuel Tank</value>
+      <value>Windshield</value>
+    </att1>
+    <att2>
+      <value>Diesel</value>
+      <value>Electric</value>
+      <value>Hybrid</value>
+      <value>Gasoline</value>
+    </att2>
+  </vehicle>
+  <vehicle>
+    <name>Fire truck</name>
+    <att1>
+      <value>Hydraulic Fluid</value>
+      <value>Rope Harness</value>
+      <value>Oxygen Tanks</value>
+      <value>Air horn</value>
+    </att1>
+    <att2>
+      <value>Diesel</value>
+      <value>Electric</value>
+      <value>Hybrid</value>
+      <value>Gasoline</value>
+    </att2>
+  </vehicle>
+  <vehicle>
+    <name>Tank</name>
+    <att1>
+      <value>Infrared goggles</value>
+      <value>Treads</value>
+      <value>120MM Tank Ammo</value>
+      <value>Tank Ghillie Suit</value>
+    </att1>
+    <att2>
+      <value>Diesel</value>
+      <value>Electric</value>
+      <value>Hybrid</value>
+      <value>Gasoline</value>
+    </att2>
+  </vehicle>
+  <vehicle>
+    <name>Hot Air Balloon</name>
+    <att1>
+      <value>Extra Fuel Tank</value>
+      <value>Weapon Mounts</value>
+      <value>Binoculars</value>
+      <value>Dual Hot Air Jets</value>
+    </att1>
+    <att2>
+      <value>Diesel</value>
+      <value>Electric</value>
+      <value>Hybrid</value>
+      <value>Gasoline</value>
+    </att2>
+  </vehicle>
+  <vehicle>
+    <name>Ice Cream Truck</name>
+    <att1>
+      <value>External Generator</value>
+      <value>Speakers/Megaphone</value>
+      <value>Freon for Freezers</value>
+      <value>Jumper Cables</value>
+    </att1>
+    <att2>
+      <value>Diesel</value>
+      <value>Electric</value>
+      <value>Hybrid</value>
+      <value>Gasoline</value>
+    </att2>
+  </vehicle>
+</collection>

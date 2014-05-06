@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Terminator App selection example 1</title>
+	 
+	<!-- tab styling -->
+	<link rel="stylesheet" type="text/css" href="./css/tabs.css" />
+	<link rel="stylesheet" type="text/css" href="./css/standalone.css"/>	
+	
+	<style>
+		/* tab pane styling */
+		.panes div {
+			display:none;		
+			padding:15px 10px;
+			border:1px solid #999;
+			border-top:0;
+			/*height:100px;*/
+			font-size:14px;
+			background-color:#fff;
+		}
+		
+		.highlighted {
+			background-color:#33FF44;
+		}
+	</style>
+	
+	
+	<script src="http://cdn.jquerytools.org/1.2.6/jquery.tools.min.js"></script>
+	
+	<script type="text/javascript">
+	
+		$(function() {
+			// setup ul.tabs to work as tabs for each div directly under div.panes
+			$("ul.tabs").tabs("div.panes > div");
+		});
+	
+		var highlightmap = new Array();
+		var maxcountmap = {'w':2, 'a':1, 'e':2, 's':2, 'f':2, 'r':1, 'v':1};
+
+		var HIGHLIGHTED = "#33FF44";		// green
+		var NOT_HIGHLIGHTED = "#FFFFFF";	// white
+		
+	
+		function highlight(btn, rowId) {
+			var row = document.getElementById(rowId);
+			var index = rowId.charAt(0), counter = highlightmap[index];
+			
+			if(counter == null) { highlightmap[index] = counter = 0; }
+			if(maxcountmap[index] == null) { alert('No Max Defined for key[' + index + ']'); }
+
+			if(row.getAttribute("bgcolor") != HIGHLIGHTED && (counter < maxcountmap[index])) {
+				row.setAttribute("bgcolor", HIGHLIGHTED);
+				btn.value = "Deselect";
+				highlightmap[index] = ++counter;
+			}
+			else if (row.getAttribute("bgcolor") == HIGHLIGHTED){
+				row.setAttribute("bgcolor", NOT_HIGHLIGHTED);
+				btn.value = "Select";
+				highlightmap[index] = --counter;
+			}
+		};
+	
+		
+		function clearAllHighlights() {
+			for(key in maxcountmap) {
+				for(var i=1; i <= 5; i++) {
+					var row = document.getElementById(key + '' + i);
+					if(row != null) {
+						row.setAttribute("bgcolor", NOT_HIGHLIGHTED);
+					}
+				}
+			}
+			highlightmap = new Array();
+		}
+
+		$(document).ready(
+			function() {
+				$.ajax({
+			    type: "GET",
+			    url: "data.xml",
+			    dataType: "xml",
+			    success: parseXml
+			  });
+			}
+		);
+		
+		
+		var table_head = '<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">';
+		
+		function parseXml(xml) {
+			
+			var items = ['weapon', 'armor', 'equipment', 'skill', 'firstaid', 'repellent', 'vehicle'];
+
+			for(var i=0; i < items.length ; i++) {
+				var counter=0;
+				var content = table_head;
+				
+				$(xml).find(items[i]).each(
+					function() {
+						var name = $(this).find("name").text();
+						content += "<tr id='" + items[i].charAt(0) + ++counter + "'>";
+						content += '<td style="width:100px;height:100px" nowrap="nowrap">' + name + '<br/>';
+						content += '<input type="button" value="Select" onclick="highlight(this,\'' + items[i].charAt(0) + counter + '\');" /></td>';
+						content += "<td><select><option selected=\"selected\"></option>";
+						
+						$(this).find("att1").find("value").each(
+							function() {
+								content += "<option>" + $(this).text() + "</option>";
+							}	
+						)
+						
+						content += "</select></td><td><select><option selected=\"selected\"></option>";
+	 
+						$(this).find("att2").find("value").each(
+							function() {
+								content += "<option>" + $(this).text() + "</option>";
+							}	
+						);
+						
+						content += "</td></tr>";
+					}
+				); // end xml find() loop
+				
+				content += "</table>";
+				document.getElementById('d'+ i).innerHTML = content;
+				
+			} //end for loop
+		} //end function
+
+		
+	</script>
+</head>
+
+<body>
+
+	<!-- the tabs -->
+	<ul class="tabs">
+		<li><a href="#">Weapons</a></li>
+		<li><a href="#">Armor</a></li>
+		<li><a href="#">Equipment</a></li>
+		<li><a href="#">Skills</a></li>
+		<li><a href="#">First Aid</a></li>
+		<li><a href="#">Repellent</a></li> 
+		<li><a href="#">Vehicle</a></li>
+	</ul>
+	
+	
+	<form>
+		<div id="panes" class="panes">
+			<div id="d0">content</div>
+			<div id="d1">content2</div>
+			<div id="d2">content3</div>
+			<div id="d3">content4</div>
+			<div id="d4">content5</div>
+			<div id="d5">content6</div>
+			<div id="d6">content7</div>
+		</div>
+		<input type="button" onclick="alert('hello');" value="Submit Form" /> <button type="reset" onclick="clearAllHighlights()">Clear All Data</button>
+	</form>
+
+
+</body>
+
+</html>

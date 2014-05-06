@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>jQuery Tools standalone demo</title>
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	 	google.load("jquery", "1.7.1");
+  		google.load("jqueryui", "1.8.16");
+  	</script>
+  	
+	<!-- 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="http://jqueryui.com/ui/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="http://jqueryui.com/ui/jquery.ui.accordion.js"></script>
+	-->
+	
+	<script>	  
+		$(function() {
+			$( "#accordion" ).accordion();
+		}); 
+	</script>
+
+	<!-- standalone page styling (can be removed) -->
+	<link rel="stylesheet" type="text/css" href="./css/standalone.css"/>	
+
+
+	
+	<!-- tab styling -->
+	<link rel="stylesheet" type="text/css" href="./css/tabs.css" />
+	
+	
+	<!-- tab pane styling -->
+	<style>
+	
+	/* tab pane styling */
+	.panes div {
+		display:none;		
+		padding:15px 10px;
+		border:1px solid #999;
+		border-top:0;
+		/*height:100px;*/
+		font-size:14px;
+		background-color:#fff;
+	}
+
+	</style>
+</head>
+
+<body>
+
+
+<!-- the tabs 
+<ul class="tabs">
+	<li><a href="#">Weapons</a></li>
+	<li><a href="#">Armor</a></li>
+	<li><a href="#">Equipment</a></li>
+	<li><a href="#">Skills</a></li>
+	<li><a href="#">First Aid</a></li>
+	<li><a href="#">Repellent</a></li> 
+	<li><a href="#">Vehicle</a></li>
+</ul>
+-->
+
+<div class="demo">
+
+
+<!-- tab "panes" -->
+<div id="accordion" class="panes">
+
+	<h3><a href="#">Section 1</a></h3>
+	<div>
+		<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">
+			<tr>
+				<td style="width:100px;height:100px">Trebuchet</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Dead Zombies</option>
+						<option>Rocks</option>
+						<option>Flaming Water Balloons</option>
+						<option>Acid Water Balloons</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Swinging Counterweight</option>
+						<option>Fixed Counterweight</option>
+						<option>Floating Frame</option>
+						<option>Floating Arm</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Chopsticks</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Bamboo Chopsticks</option>
+						<option>Bone Chopsticks</option>
+						<option>Wood Chopsticks</option>
+						<option>Carbon Fiber Chopsticks</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>3''</option>
+						<option>6''</option>
+						<option>9''</option>
+						<option>12''</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Potato Gun</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Russet Potatoes</option>
+						<option>White Potatoes</option>
+						<option>Red Potatoes</option>
+						<option>Yellow Potatoes</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Red Dot Sight</option>
+						<option>ACOG Scope</option>
+						<option>Infrared Sight</option>
+						<option>Holographic Sight</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Lightsaber</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Standard</option>
+						<option>Curve-Hilted</option>
+						<option>Tonfa-Style</option>
+						<option>Wrist Hilt</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Zinc</option>
+						<option>Lithium</option>
+						<option>Alkaline</option>
+						<option>Mercury</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Laser</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Gas Laser</option>
+						<option>Chemical Laser</option>
+						<option>Metal-Vapor Laser</option>
+						<option>Solid-State Laser</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Electrical Discharge</option>
+						<option>Transverse</option>
+						<option>Chemical Reaction</option>
+						<option>Flashlamp</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+<!-- 	
+	
+	<h3><a href="#">Section 2</a></h3>
+	<div>
+		<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">
+			<tr>
+				<td style="width:100px;height:100px">Kevlar</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Type 29</option>
+						<option>Type KM2</option>
+						<option>Type 129</option>
+						<option>Type XP</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Desert Camouflage</option>
+						<option>Woodland Camouflage</option>
+						<option>Digital Camouflage</option>
+						<option>Golden Camouflage</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Deet Repellent</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>25%</option>
+						<option>50%</option>
+						<option>75%</option>
+						<option>100%</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Desert Camouflage</option>
+						<option>Woodland Camouflage</option>
+						<option>Digital Camouflage</option>
+						<option>Golden Camouflage</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Axe Body Spray</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Touch</option>
+						<option>Clix</option>
+						<option>Vice</option>
+						<option>Dark Temptation</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Desert Camouflage</option>
+						<option>Woodland Camouflage</option>
+						<option>Digital Camouflage</option>
+						<option>Golden Camouflage</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Overalls</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Shirtless</option>
+						<option>One Strap</option>
+						<option>Wife beater</option>
+						<option>T-shirt</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Desert Camouflage</option>
+						<option>Woodland Camouflage</option>
+						<option>Digital Camouflage</option>
+						<option>Golden Camouflage</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Hula Skirt</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Bluegrass</option>
+						<option>Fescue</option>
+						<option>Ryegrass</option>
+						<option>Bentgrass</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Desert Camouflage</option>
+						<option>Woodland Camouflage</option>
+						<option>Digital Camouflage</option>
+						<option>Golden Camouflage</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<h3><a href="#">Section 3</a></h3>
+	<div>
+		<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">
+			<tr>
+				<td style="width:100px;height:100px">Rope</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Hemp</option>
+						<option>Cotton</option>
+						<option>Nylon</option>
+						<option>Polyethylene</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Twisted</option>
+						<option>Single Braid</option>
+						<option>Double Braid</option>
+						<option>Kernamantle</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Messaging System</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Carrier Pigeon</option>
+						<option>Message in a Bottle</option>
+						<option>Frisbee</option>
+						<option>Model Plane</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Substitution Cipher</option>
+						<option>Transposition Cipher</option>
+						<option>Private Key Cipher</option>
+						<option>Public Key Cipher</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Light Source</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Spotlight</option>
+						<option>Lantern</option>
+						<option>Flashlight</option>
+						<option>Infrared</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Pulsing</option>
+						<option>Steady Beam</option>
+						<option>Pinpoint</option>
+						<option>Strobe</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Tools</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Axe</option>
+						<option>Hammer</option>
+						<option>Wrench</option>
+						<option>Plunger</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Carbon Fiber</option>
+						<option>Titanium</option>
+						<option>Aluminum</option>
+						<option>Wood</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Welding</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Arc</option>
+						<option>Gas</option>
+						<option>Resistance</option>
+						<option>Energy Beam</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Spot Welding</option>
+						<option>Shot Welding</option>
+						<option>Flash Welding</option>
+						<option>Projection Welding</option>
+					</select>
+				</td>
+			</tr>
+		</table>	
+	</div>
+	
+	<h3><a href="#">Section 4</a></h3>
+		<div>
+		<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">
+			<tr>
+				<td style="width:100px;height:100px">John Wayne</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Western</option>
+						<option>Sailing</option>
+						<option>romance</option>
+						<option>War</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Shooting</option>
+						<option>Talking</option>
+						<option>Leadership</option>
+						<option>Kissing</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Chuck Norris</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Texas Ranger</option>
+						<option>Way of the Dragon</option>
+						<option>Missing in Action</option>
+						<option>Top Dog</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Punch</option>
+						<option>Kick</option>
+						<option>Headbutt</option>
+						<option>Stare</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">John "Hannibal" Smith</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Vietnam</option>
+						<option>Army Base</option>
+						<option>Air Plane</option>
+						<option>China</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Planning</option>
+						<option>Leadership</option>
+						<option>Disguise</option>
+						<option>Fighting</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">The Situation</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Staten Island</option>
+						<option>Italy</option>
+						<option>Jersey Shore</option>
+						<option>Las Vegas</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>GTL</option>
+						<option>Drinking</option>
+						<option>Rapping</option>
+						<option>Creeping</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">MacGruber</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Missile Silo</option>
+						<option>Rebel Training Camp</option>
+						<option>Lab</option>
+						<option>Ship</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Dumb Luck</option>
+						<option>Camouflage</option>
+						<option>Bomb Defusal</option>
+						<option>Random Object Use</option>
+					</select>
+				</td>
+			</tr>
+		</table>	
+	</div>
+
+<h3><a href="#">Section 5</a></h3>
+	<div>
+		<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">
+			<tr>
+				<td style="width:100px;height:100px">Fast Food</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Hot dog</option>
+						<option>Hamburger</option>
+						<option>Coldcut sandwich</option>
+						<option>Egg and cheese bagel</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Salt</option>
+						<option>Pepper</option>
+						<option>Ketchup</option>
+						<option>Mustard</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Medical Supplies</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Ace Bandage</option>
+						<option>Band-aids</option>
+						<option>Gauze</option>
+						<option>Sports tape</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Skin-toned Plastic</option>
+						<option>Clear Plastic</option>
+						<option>White Fabric</option>
+						<option>Skin-toned Fabric</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Drinks</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Juice</option>
+						<option>Soda</option>
+						<option>Milkshake</option>
+						<option>Water</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Small</option>
+						<option>Medium</option>
+						<option>Large</option>
+						<option>Super sized</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Candy</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Gumballs</option>
+						<option>Jellybeans</option>
+						<option>Swedish fish</option>
+						<option>Peach rings</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>1/4 lbs</option>
+						<option>1/2 lbs</option>
+						<option>1 lb</option>
+						<option>5 lbs</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Vegetable</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Tomato</option>
+						<option>Spinach</option>
+						<option>Corn</option>
+						<option>Broccoli</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Raw</option>
+						<option>Steamed</option>
+						<option>Grilled</option>
+						<option>Boiled</option>
+					</select>
+				</td>
+			</tr>
+		</table>	
+	</div>
+	
+	<h3><a href="#">Section 6</a></h3>
+	<div>
+		<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">
+			<tr>
+				<td style="width:100px;height:100px">Stuffed Animals</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Mouse</option>
+						<option>Snake</option>
+						<option>Elephant</option>
+						<option>Giraffe</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Small</option>
+						<option>Medium</option>
+						<option>Large</option>
+						<option>Supersized</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Facepaint</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Lion</option>
+						<option>Zebra</option>
+						<option>Butterfly</option>
+						<option>Design</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Full-face</option>
+						<option>Right cheek</option>
+						<option>Left cheek</option>
+						<option>Eyes</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Merchandise</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Hat</option>
+						<option>Beach Towel</option>
+						<option>T-shirt</option>
+						<option>Backpack</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Single color</option>
+						<option>Tye-dyed</option>
+						<option>Small logo</option>
+						<option>Large logo</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Park Photos</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Rollercoaster</option>
+						<option>Merry-Go-Round</option>
+						<option>Teacups</option>
+						<option>Gokarts</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Framed</option>
+						<option>Keychain</option>
+						<option>Poster-sized</option>
+						<option>Magnet</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Odor Based</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Rotten Eggs</option>
+						<option>Garlic</option>
+						<option>Mint</option>
+						<option>Paprika</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Skin</option>
+						<option>Clothes</option>
+						<option>Aerosol</option>
+						<option>Ground</option>
+					</select>
+				</td>
+			</tr>
+		</table>	
+	</div>
+	
+	
+	<h3><a href="#">Section 7</a></h3>
+	<div>
+		<table border="1" bordercolor="FFCC00" style="background-color:FFFFCC" width="400" cellpadding="3" cellspacing="3">
+			<tr>
+				<td style="width:100px;height:100px">Hovercraft</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Rough Terrain Skirt</option>
+						<option>High Output Fan</option>
+						<option>Extar Fuel Tank</option>
+						<option>Windshield</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Diesel</option>
+						<option>Electric</option>
+						<option>Hybrid</option>
+						<option>Gasoline</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Firetruck</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Hydraulic Fluid</option>
+						<option>Rope Harness</option>
+						<option>Oxygen Tanks</option>
+						<option>Airhorn</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Diesel</option>
+						<option>Electric</option>
+						<option>Hybrid</option>
+						<option>Gasoline</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Tank</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Infrared goggles</option>
+						<option>Treads</option>
+						<option>120MM Tank Ammo</option>
+						<option>Tank Ghillie Suit</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Diesel</option>
+						<option>Electric</option>
+						<option>Hybrid</option>
+						<option>Gasoline</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Hot Air Balloon</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Extra Fuel Tank</option>
+						<option>Weapon Mounts</option>
+						<option>Binoculars</option>
+						<option>Dual Hot Air Jets</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Diesel</option>
+						<option>Electric</option>
+						<option>Hybrid</option>
+						<option>Gasoline</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100px;height:100px">Ice Cream Truck</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>External Generator</option>
+						<option>Speakers/Megaphone</option>
+						<option>Freon for Freezers</option>
+						<option>Jumper Cables</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option selected="selected"></option>
+						<option>Diesel</option>
+						<option>Electric</option>
+						<option>Hybrid</option>
+						<option>Gasoline</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	 -->
+		
+</div>
+
+	
+
+
+</body>
+
+</html>

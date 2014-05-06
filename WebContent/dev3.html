@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script> 
+	 
+	 <script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+	 
+	<link rel="stylesheet" type="text/css" href="./css/tabs.css" />	
+	
+	<style>
+	
+	/* all draggable content has this styling */
+	.draggable {
+		width: 100px;
+		height: 100px;
+		padding: 0.5em;
+		float: left;
+		margin: 10px 10px 10px 0;
+		border: 2px solid #000066
+	};
+	
+	/* all droppable elements have this styling */
+	.droppable {
+		width: 100px;
+		height: 100px;
+		padding: 0.5em;
+		/*float: left;*/
+		margin: 10px;
+		border: 2px solid #000000
+	};
+	
+	/* highlighting when you hover a draggable element over a droppable */
+	.hoveredHighlight {
+		background: #aaa;
+	};
+	
+	/* standard image settings so they all look the same */
+	.stdImageProperty {
+		draggable: false;
+		width: 100px;
+		height: 100px;
+	};
+	
+ 
+	/* tab pane styling */
+	.panel {
+		display:none;		
+		padding:15px 10px;
+		border:1px solid #999;
+		border-top:0;
+		height:100px;
+		font-size:14px;
+		background-color:#fff;
+	};
+
+	</style>
+
+
+	<script type="text/javascript">	
+	
+	$(init);
+
+		function init() {
+			
+			// setup ul.tabs to work as tabs for each div directly under div.panes
+			$("ul.tabs").tabs("div.panes > div");
+			
+			
+			
+			/*
+			// the order of these arrays matter!!
+			var divContainers = ['h_drag', 't_drag'];
+			var containers = ['#helmetContainer', '#torsoContainer'];
+			for(var i=0; i < containers.length; i++) {
+				$("div[id*='" + divContainers[i] +"']").draggable({
+					 stack: containers[i] + ' div',
+					 cursor: 'move',
+				     revert: true
+				});
+			}
+			*/
+			
+			// find all h_drag (helmets) divs and make them draggable
+				
+			$("div[id*='h_drag']").draggable({
+				 stack: '#helmetContainer div',
+				 cursor: 'move',
+			     revert: true
+			});
+			
+			/*		
+ 			$("div[id*='t_drag']").draggable({
+				 stack: '#torsoContainer div',
+				 cursor: 'move',
+			     revert: true
+			});
+			
+			$("div[id*='h_drag']").draggable({
+				 stack: '#handContainer div',
+				 cursor: 'move',
+			     revert: true
+			});
+			
+			$("div[id*='l_drag']").draggable({
+				 stack: '#legContainer div',
+				 cursor: 'move',
+			     revert: true
+			});
+			
+			$("div[id*='f_drag']").draggable({
+				 stack: '#feetContainer div',
+				 cursor: 'move',
+			     revert: true
+			}); */
+			
+			/*
+			var dropContainers = ['h_drop', 't_drop', 'lh_drop', 'rh_drop', 'l_drop', 'f_drop'];
+			for(var i=0; i < containers.length; i++) {
+				$("#" + dropContainers[i]).droppable({
+					accept: '#' + dropContainers[i]+ ' div',
+					drop : handleDrop,
+					hoverClass: 'hoveredHighlight'
+				});
+			}*/
+			
+			
+			
+			// make the h_drop (helmet droppable) droppable
+			$("#h_drop").droppable({
+				accept: '#helmetContainer div',
+				drop : handleDrop,
+				hoverClass: 'hoveredHighlight'
+			});
+			
+			/*
+ 			$("#t_drop").droppable({
+				accept: '#torsoContainer div',
+				drop : handleDrop,
+				hoverClass: 'hoveredHighlight'
+			});
+			
+			$("#lh_drop").droppable({
+				accept: '#handContainer div',
+				drop : handleDrop,
+				hoverClass: 'hoveredHighlight'
+			});
+			
+			$("#rh_drop").droppable({
+				accept: '#handContainer div',
+				drop : handleDrop,
+				hoverClass: 'hoveredHighlight'
+			});
+			
+			$("#l_drop").droppable({
+				accept: '#legContainer div',
+				drop : handleDrop,
+				hoverClass: 'hoveredHighlight'
+			});
+			
+			$("#f_drop").droppable({
+				accept: '#feetContainer div',
+				drop : handleDrop,
+				hoverClass: 'hoveredHighlight'
+			});*/
+		}
+	
+		function handleDrop(event, ui) {
+			
+			$(this).addClass("ui-state-highlight").find("p").html("Dropped!");
+			
+			ui.draggable.draggable( 'disable' );
+		    $(this).droppable( 'disable' );
+		    ui.draggable.position( { of: $(this), my: 'top', at: 'top' } );
+		    ui.draggable.draggable( 'option', 'revert', false );
+			
+		}
+	
+		
+	</script>
+	
+</head>
+<body>
+
+
+	 <div id="content">  
+
+		<table border="1" style="width: 400px; height: 600px;">
+			<tbody>
+				<tr align="center">
+					<td width="33%" height="25%" bgcolor="black"></td>
+					<td width="33%" height="25%"><div id="h_drop" class="droppable"><p>head</p></div></td>
+					<td width="33%" height="25%" bgcolor="black"></td>
+				</tr>
+				<tr align="center">
+					<td width="33%" height="25%"><div id="t_drop" class="droppable"><p>torso</p></div></td>
+					<td width="33%" rowspan="2"><img src="http://youthoughtwewouldntnotice.com/blog3/wp-content/uploads/2011/02/Futurama-AngryBender.png" width="200px" draggable="false" /></td>
+					<td width="33%" height="25%" bgcolor="black"></td>
+				</tr>
+				<tr align="center">
+					<td width="33%" height="25%"><div id="lh_drop" class="droppable"><p>left hand</p></div></td>
+					<td width="33%" height="25%"><div id="rh_drop" class="droppable"><p>right hand</p></div></td>
+				</tr>
+				<tr align="center">
+					<td width="33%" height="25%" bgcolor="black"></td>
+					<td width="33%" height="25%"><div id="l_drop" class="droppable"><p>legs</p></div>
+					</td>
+					<td width="33%" height="25%"><div id="f_drop" class="droppable"><p>feet</p></div></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<br/>
+	<!--			
+ 		<div id="helmetContainer" style="float:left;">
+			<div id="h_drag" class="draggable">
+				<img src="http://www.victoriana.com/Mens-Clothing/images/mens_hats-12.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag2" class="draggable">
+				<img src="http://www.yoopersteez.com/images/blog/hats/wool-packer.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag3" class="draggable">
+				<img src="http://www.medievalarmor.com/medieval-armor-images/imperial-roman-helmet-8112.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag4" class="draggable">
+				<img src="http://www.antiquehelper.com/auctionimages/44085t.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag5" class="draggable">
+				<img src="http://elitechoice.org/wp-content/uploads/2008/07/darth-vader-concept-helmet.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag6" class="draggable">
+				<img src="http://www.bikertails.com/noveltyhelmets/helmet%20german%20voss%20black%20spike.jpg" class="stdImageProperty" />
+			</div>
+		</div>
+		
+
+		<div id="torsoContainer" style="float:left;">
+			<div id="t_drag" class="draggable">
+				<img src="http://upload.wikimedia.org/wikipedia/en/d/dc/Army_IOTV.jpg" class="stdImageProperty" />
+			</div>
+			<div id="t_drag2" class="draggable">
+				<img src="http://www.atlantictactical.com/mmCATALOG/Images/xtreme-hp-body-armor.jpg" class="stdImageProperty" />
+			</div>
+			<div id="t_drag3" class="draggable">
+				<img src="http://www.superherotimes.com/newsarchive/batman_armor.jpg" class="stdImageProperty" />
+			</div>
+			<div id="t_drag4" class="draggable">
+				<img src="http://www.teesnthings.com/productimages/superhero/superman-t-shirts/superman-tee-shirt.jpg" class="stdImageProperty" />
+			</div>
+			<div id="t_drag5" class="draggable">
+				<img src="http://www.lewzworld.com/simpsons/pin003.jpg" class="stdImageProperty" />
+			</div>
+			<div id="t_drag6" class="draggable">
+				<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=15379317" class="stdImageProperty" />
+			</div>
+		</div>
+		
+		<div id="handContainer" style="float:left;">
+			<div id="h_drag" class="draggable">
+				<img src="http://www.e-chainsaw.com/images/powertools/husqvarna/HUS_3120xp_lg.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag2" class="draggable">
+				<img src="http://www.optingolfer.com/web/imgs/democlubs/free_demo_hybrid_golf_clubs.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag3" class="draggable">
+				<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Katana-Dresden.jpg/170px-Katana-Dresden.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag4" class="draggable">
+				<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IOF-32-REV-1.JPG/250px-IOF-32-REV-1.JPG" class="stdImageProperty" />
+			</div>
+			<div id="h_drag5" class="draggable">
+				<img src="http://www.codblackopsblog.com/wp-content/uploads/2010/05/Black-Ops-Weapons-Flamethrower.jpg" class="stdImageProperty" />
+			</div>
+			<div id="h_drag6" class="draggable">
+				<img src="http://assets.nydailynews.com/polopoly_fs/1.113340!/img/httpImage/image.jpg" class="stdImageProperty" />
+			</div>
+		</div>
+		
+		<div id="legContainer" style="float:left;">
+			<div id="l_drag" class="draggable">
+				<img src="http://www.epicycle.org.uk/images/jerry-legs.jpg" class="stdImageProperty" />
+			</div>
+			<div id="l_drag2" class="draggable">
+				<img src="http://b9robot.com/April/lower.jpg" class="stdImageProperty" />
+			</div>
+			<div id="l_drag3" class="draggable">
+				<img src="http://2.bp.blogspot.com/_DSaJQQIrrtU/TRn1e3K44wI/AAAAAAAAFck/oDL25PYR6ik/s1600/Leg+Warmers+On.jpg" class="stdImageProperty" />
+			</div>
+			<div id="l_drag4" class="draggable">
+				<img src="http://img.truereligionforyoujeans.com/pic/jeans/Mens-Jack-Hang-EM-Low-Body-Rinse-Jeans-384-2011-06-01-10-01-31-TR_JEANS.jpg" class="stdImageProperty" />
+			</div>
+			<div id="l_drag5" class="draggable">
+				<img src="http://princessonthego.com/images/large/SK-110PINK.JPG" class="stdImageProperty" />
+			</div>
+			<div id="l_drag6" class="draggable">
+				<img src="http://nerdapproved.com/wp-content/uploads/2007/08/underwear-rug.jpg?cb5e28" class="stdImageProperty" />
+			</div>
+		</div>
+		<div id="feetContainer" style="float:left;">
+			<div id="f_drag" class="draggable">
+				<img src="http://www.carrellistudio.com/wp-content/uploads/2011/05/alexander_mcqueen_shoes.jpg" class="stdImageProperty" />
+			</div>
+			<div id="f_drag2" class="draggable">
+				<img src="http://www.coolsupraonline.com/images/Supra_Skytops/Men-Supra-Skytop-Red-Black-Skate-Shoes.jpg" class="stdImageProperty" />
+			</div>
+			<div id="f_drag3" class="draggable">
+				<img src="http://lawnmowertiresshop.net/images/Wheelbarrow%20Tires.jpg" class="stdImageProperty" />
+			</div>
+			<div id="f_drag4" class="draggable">
+				<img src="http://www.chanel.com/fashion/data/1280/hautdebit/collections/6/_img/8/5/zoom/02.jpg" class="stdImageProperty" />
+			</div>
+			<div id="f_drag5" class="draggable">
+				<img src="http://images.mylot.com/userImages/images/postphotos/2111085.jpg" class="stdImageProperty" />
+			</div>
+			<div id="f_drag6" class="draggable">
+				<img src="http://www.instructables.com/files/deriv/FO8/B73M/F3HY3RUY/FO8B73MF3HY3RUY.MEDIUM.jpg" class="stdImageProperty" />
+			</div>
+		</div> -->
+		
+		
+	</div><!-- end content div -->
+				 
+				 
+<!-- the tabs -->
+<ul class="tabs">
+	<li><a href="#">Tab 1</a></li>
+	<li><a href="#">Tab 2</a></li>
+	<li><a href="#">Tab 3</a></li>
+	<li><a href="#">Tab 4</a></li>
+	<li><a href="#">Tab 5</a></li>
+	<li><a href="#">Tab 6</a></li>
+	<li><a href="#">Tab 7</a></li>
+</ul>
+
+<!-- tab "panes" -->
+<div class="panes">
+	<div class="panel"> Head Container
+	
+		 <div id="helmetContainer" style="float:left;">
+			<div id="h_drag" class="draggable">
+				<img src="http://www.victoriana.com/Mens-Clothing/images/mens_hats-12.jpg" class="stdImageProperty" style="draggable: false; width: 100px;height: 100px;"/> 
+			</div>
+			<div id="h_drag2" class="draggable">
+				<!-- <img src="http://www.yoopersteez.com/images/blog/hats/wool-packer.jpg" class="stdImageProperty" /> -->
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel">Second tab content</div> 
+	<div class="panel">3rd tab content hello world</div>  
+	<div class="panel">4th tab content hello world</div> 
+	<div class="panel">5th tab content hello world</div>
+	<div class="panel">6th tab content hello world</div> 
+	<div class="panel">7th tab content hello world</div> 
+</div>
+		
+</body>
+</html>
